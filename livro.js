@@ -4,51 +4,56 @@ class Livro
     #nome
     #preco
 
-    constructor(codigo,nome,preco){
-        this.codigo = codigo;
-        this.nome = nome;
-        this.preco = preco;
+    constructor (codigo, nome, preco)
+    {
+        this.codigo=codigo;
+        this.nome=nome;
+        this.preco=preco;
     }
 
-
-    get codigo(){
+    get codigo ()
+    {
         return this.#codigo
     }
 
-    get nome(){
+    get nome ()
+    {
         return this.#nome
     }
 
-    get preco(){
+    get preco ()
+    {
         return this.#preco
     }
 
-    set codigo(codigo){
-        if(codigo === undefined || typeof codigo !== number || isNaN(codigo) || codigo !==parseInt(codigo) || codigo<=0){
-            throw ('Codigo invalido')
-        }
+    set codigo (codigo)
+    {
+        if (codigo===undefined || typeof codigo !== 'number' || isNaN(codigo) || codigo!==parseInt(codigo) || codigo<=0)
+            throw ('Código inválido');
 
         this.#codigo = codigo;
     }
 
-    set nome(nome){
-        if(nome === undefined || nome==="" || nome!='string'){
-            throw('Nome invalido')
-        }
-        this.#nome = nome
+    set nome (nome)
+    {
+        if (nome===undefined || typeof nome !== 'string' || nome==="")
+            throw ('Nome inválido');
+
+        this.#nome = nome;
     }
 
-    set preco(preco){
-        if(preco === undefined || preco!="number" || isNaN(preco)|| preco<=0){
-            throw('Preco invalido');
-        }
+    set preco (preco)
+    {
+        if (preco===undefined || typeof preco !== 'number' || isNaN(preco) || preco<=0)
+            throw ('Preco inválido');
+
         this.#preco = preco;
     }
-
 }
 
-function novo(codigo,nome,preco) {
-    return new Livro(codigo,nome,preco)
+function novo (codigo,nome,preco)
+{
+    return new Livro (codigo,nome,preco);
 }
 
-module.exports={novo}
+module.exports = {novo}

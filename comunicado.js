@@ -32,20 +32,20 @@ class Comunicado
     }
 
     set mensagem(mensagem){
-        if(mensagem === undefined || mensagem==="" || mensagem!='string'){
+        if(mensagem === undefined || typeof mensagem !=='string' || mensagem===""){
             throw('mensagem invalida')
         }
-        this.#mensagem = mensagem
+        this.#mensagem = mensagem;
     }
 
     set descricao(descricao){
-        if(descricao === undefined || descricao!='string' || descricao===''){
+        if(descricao === undefined || typeof descricao!='string' || descricao===''){
             throw('descricao invalida');
         }
         this.#descricao = descricao;
     }
 
-    get Object()
+    get object()
     {
         return {codigo:this.#codigo, mensagem:this.#mensagem, descricao:this.#descricao};
     }
